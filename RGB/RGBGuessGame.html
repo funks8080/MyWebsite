@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RGB Guess Game</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="RGBGuessGame.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="https://stevenfunk.net">Funk</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a href="../Home.html">About</a></li>
+	        <li><a href="../Contact.html">Contact</a></li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="../MyWork.html">My Work</a></li>
+	        <li><a href="../Resume.html">Resume</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<h1>
+		The Great
+		<br>
+		<span id="colorDisplay">RGB</span>
+		<br>
+		Guessing Game
+	</h1>
+
+	<div id="menu">
+		<button id="colorButton">New Colors</button>
+		<span id="message"></span>
+		<button id="easyButton" class="mode">Easy</button>
+		<button id="medButton" class="selected mode">Medium</button>
+		<button id="hardButton" class="mode">Hard</button>
+		<button id="impButton" class="mode">Imposible</button>
+	</div>
+
+	<div class="gameContainer">
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+	</div>
+	
+<script type="text/javascript" src="RGBGuessGame.js"></script>
+</body>
+</html>

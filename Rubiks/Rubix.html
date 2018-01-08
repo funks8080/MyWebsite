@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubik's Cube</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="Rubix.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-example" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+				<a href="https://stevenfunk.net" class="navbar-brand">Funk</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-example">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href=../Home.html>About</a>
+					</li>
+					<li>
+						<a href="..Contact.html">Contact</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="../MyWork.html">My Work</a>
+					</li>
+					<li>
+						<a href="../Resume.html">Resume</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<h1>
+		Rubik's Cube App
+	</h1>
+
+	<div class="gameContainer">
+		<div class="row">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-2">
+				<button id="topLeft" class="rubixButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<button id="topCenter" class="rubixButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<button id="topRight" class="rubixButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+				<button id="leftTop" class="rubixButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<button id="rightTop" class="rubixButton"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+				<button id="leftCenter" class="rubixButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-1">
+				<button id="rightCenter" class="rubixButton"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">
+				<button id="leftBottom" class="rubixButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="square"></div>
+			</div>
+			<div class="col-xs-1">
+				<button id="rightBottom" class="rubixButton"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-2">
+				<button id="bottomLeft" class="rubixButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<button id="bottomCenter" class="rubixButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2">
+				<button id="bottomRight" class="rubixButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+		<div class="row">
+			<div class="controls">
+				<div class="row">
+					<button id="moveUp" class="rubixButton"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+				</div>
+				<div class="row">
+					<button id="moveLeft" class="rubixButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+					<button id="moveRight" class="rubixButton"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+				</div>
+				<div class="row">
+					<button id="moveDown" class="rubixButton"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 miniWholeSquareTitle">Top Face</div>
+			<div class="col-xs-2 miniWholeSquareTitle">Left Face</div>
+			<div class="col-xs-2 miniWholeSquareTitle">Back Face</div>
+			<div class="col-xs-2 miniWholeSquareTitle">Right Face</div>
+			<div class="col-xs-2 miniWholeSquareTitle">Bottom Face</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 miniWholeSquare">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniTopFace"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 miniWholeSquare">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniLeftFace"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 miniWholeSquare">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBackFace"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 miniWholeSquare centered">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniRightFace"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 miniWholeSquare">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+					<div class="col-xs-4">
+						<div class="miniSquare miniBottomFace"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+<script type="text/javascript" src="Rubix.js"></script>
+</body>
+</html>
